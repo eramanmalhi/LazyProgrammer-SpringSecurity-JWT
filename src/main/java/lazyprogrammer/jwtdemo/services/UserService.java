@@ -21,6 +21,7 @@ public class UserService {
         User entity = new User();
         dto.setPassword(passwordEncoder.encode(dto.getPassword()));
         BeanUtils.copyProperties(dto, entity);
+
         User savedUser = userRepository.save(entity);
         dto.setPassword("******");
         dto.setUserId(savedUser.getUserId());
