@@ -40,7 +40,7 @@ This project demonstrates the implementation of **JWT (JSON Web Token)** based a
 ## Setup Instructions
 
 1. **Clone the repository**:
-  git clone https://github.com/your-username/spring-boot-jwt-security.git
+  git clone https://github.com/eramanmalhi/LazyProgrammer-SpringSecurity-JWT.git
   cd spring-boot-jwt-security
 
 3. **Build and Run**:
