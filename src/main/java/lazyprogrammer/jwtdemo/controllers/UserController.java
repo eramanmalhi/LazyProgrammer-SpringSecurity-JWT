@@ -25,7 +25,7 @@ public class UserController {
         if (Objects.isNull(userDto)) {
             throw new InvalidPayloadException("Payload cannot be Null");
         }
-        if (userService.findByUsername(userDto.getUsername())) {
+        if(userService.findByUsername(userDto.getUsername())){
             throw new UserIdAlreadyExistException("Username is already taken");
         }
         return userService.saveUser(userDto);
