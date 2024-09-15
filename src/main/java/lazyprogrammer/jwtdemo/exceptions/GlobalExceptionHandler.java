@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<?> handleBadCredentialsException
-            (BadCredentialsException badCredentialsException, WebRequest webRequest) {
+    (BadCredentialsException badCredentialsException, WebRequest webRequest) {
         Map<String, Object> body = new HashMap<>();
         body.put("code", HttpStatus.UNAUTHORIZED.value());
         body.put("timestamp", LocalDateTime.now());
