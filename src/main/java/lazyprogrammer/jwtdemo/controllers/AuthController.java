@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+    private static final Logger LOG = LoggerFactory.getLogger(AuthController.class.getName());
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
     private JwtUtil jwtUtil;
     @Autowired
     private UserDetailsService userDetailsService;
-    private static final Logger LOG = LoggerFactory.getLogger(AuthController.class.getName());
 
     @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws BadCredentialsException {
