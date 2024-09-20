@@ -9,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Configuration
 public class UserDetailsServiceConfig {
@@ -24,7 +23,7 @@ public class UserDetailsServiceConfig {
             return new org.springframework.security.core.userdetails.User(user.get().getUsername(), user.get().getPassword(),
                     user.get().getRoles().stream()
                             .map(role -> new SimpleGrantedAuthority(role.getRoleName()))
-                            .collect(Collectors.toList())
+                            .toList()
             );
         };
     }
