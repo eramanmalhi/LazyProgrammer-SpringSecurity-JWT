@@ -3,6 +3,8 @@ package lazyprogrammer.jwtdemo.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -17,4 +19,5 @@ public class User {
     @Column(unique = true, length = 20)
     private String username;
     private String password;
+    private List<Roles> roles;
 }
